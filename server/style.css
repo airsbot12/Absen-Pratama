@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f2f6fc;
+  color: #222;
+}
+
+/* HEADER */
+.header {
+  background: #0b3c8a;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.header p {
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.info-text {
+  font-size: 14px;
+  color: #555;
+}
+
+/* QR */
+#reader {
+  width: 100%;
+  margin: 15px auto;
+  display: none;
+}
+
+/* BUTTON */
+.btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #084298;
+}
+
+.logout {
+  background: #dc3545;
+}
+
+.logout:hover {
+  background: #b02a37;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  width: 85%;
+  max-width: 320px;
+  text-align: center;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  padding: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0b5ed7;
+}
+
+.btn.secondary {
+  background: #6c757d;
+}
+
+.btn.secondary:hover {
+  background: #565e64;
+}
+
+/* HALAMAN QR */
+.qr-page {
+  background: #f2f6fc;
+}
+
+.qr-card {
+  text-align: center;
+}
+
+.qr-card h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.qr-card img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 10px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.qr-card .info-text {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* LAYAR BESAR (TV / PROYEKTOR) */
+@media (min-width: 768px) {
+  .qr-card h2 {
+    font-size: 28px;
+  }
+
+  .qr-card img {
+    max-width: 480px;
+  }
+
+  .qr-card .info-text {
+    font-size: 18px;
+  }
+}
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Absensi</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="qr-page">
+
+<header class="header">
+  <h1>SMK TI PRATAMA PGRI SAMARINDA</h1>
+  <p>Silakan Scan QR untuk Absensi</p>
+</header>
+
+<main class="container">
+  <div class="card qr-card">
+<a href="dashboard/index.php" class="btn-back">← Kembali ke Dashboard</a>
+    <h2>QR ABSENSI</h2>
+
+    <img id="qr" alt="QR Absensi">
+
+    <p class="info-text">
+      Buka menu <b>Scan QR</b> di HP masing-masing siswa
+    </p>
+
+  </div>
+</main>
+
+<footer class="footer">
+  QR akan berubah otomatis sesuai waktu
+</footer>
+
+<script>
+function loadQR(){
+  fetch("generate_qr.php")
+    .then(r => r.json())
+    .then(d => {
+      if(d.error){
+        alert(d.error);
+        return;
+      }
+      document.getElementById("qr").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=" + d.token;
+    });
+}
+
+// PANGGIL SAAT HALAMAN DIBUKA
+loadQR();
+
+// NANTI PRODUKSI (SUDAH FIX):
+ setInterval(loadQR, 3000);
+</script>
+
+</body>
+</html>

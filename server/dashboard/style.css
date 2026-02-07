@@ -1,0 +1,340 @@
+*{
+  box-sizing:border-box;
+  font-family:Segoe UI, Arial;
+}
+
+body{
+  margin:0;
+  background:#f4f7fb;
+  padding:16px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(13,71,161,.12);
+  margin-bottom:20px;
+}
+
+/* ===== FORM ===== */
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+label{
+  font-size:14px;
+  color:#0d47a1;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+input:focus{
+  outline:none;
+  border-color:#1565c0;
+}
+
+button{
+  padding:12px;
+  background:#1565c0;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{opacity:.9}
+
+/* ===== TABLE ===== */
+.table-wrap{
+  overflow-x:auto;
+  border-radius:12px;
+}
+
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  min-width:900px;
+  background:#fff;
+}
+
+thead th{
+  position:sticky;
+  top:0;
+  background:linear-gradient(180deg,#e3f2fd,#bbdefb);
+  color:#0d47a1;
+  font-weight:600;
+  font-size:14px;
+  text-align:left;
+  padding:12px;
+  border-bottom:2px solid #90caf9;
+  z-index:1;
+}
+
+tbody td{
+  padding:12px;
+  font-size:14px;
+  color:#333;
+  border-bottom:1px solid #eee;
+  vertical-align:middle;
+}
+
+/* zebra stripe */
+tbody tr:nth-child(even){
+  background:#fafafa;
+}
+
+tbody tr:hover{
+  background:#f1f7ff;
+}
+
+/* kolom aksi */
+.action{
+  white-space:nowrap;
+}
+
+.action a{
+  display:inline-block;
+  padding:6px 10px;
+  margin-right:6px;
+  border-radius:6px;
+  font-size:13px;
+  text-decoration:none;
+  background:#e3f2fd;
+  color:#0d47a1;
+  transition:.2s;
+}
+
+.action a:hover{
+  background:#1565c0;
+  color:#fff;
+}
+
+/* input password di tabel */
+table input[type=password],
+table input[type=text]{
+  width:110px;
+  padding:6px 8px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:13px;
+  background:#f9fbff;
+}
+
+/* tombol mata */
+table button{
+  padding:6px 8px;
+  margin-left:4px;
+  border-radius:6px;
+  font-size:14px;
+  background:#e3f2fd;
+  color:#0d47a1;
+}
+
+table button:hover{
+  background:#1565c0;
+  color:#fff;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+  body{padding:10px}
+}
+
+/* ===== LAYOUT DASHBOARD ===== */
+.container{
+  display:flex;
+  min-height:100vh;
+}
+
+.sidebar{
+  width:240px;
+  background:linear-gradient(180deg,#0d47a1,#1565c0);
+  padding:20px;
+  box-shadow:4px 0 15px rgba(0,0,0,.15);
+}
+
+.sidebar h2{
+  color:#fff;
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.sidebar a{
+  display:block;
+  padding:12px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  transition:.3s;
+}
+
+.sidebar a:hover{
+  background:#fff;
+  color:#0d47a1;
+}
+
+.content{
+  flex:1;
+  padding:30px;
+}
+
+
+/* ===== TOPBAR (MOBILE) ===== */
+.topbar{
+  display:none;
+  background:#1565c0;
+  color:#fff;
+  padding:14px 18px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hamburger{
+  font-size:24px;
+  cursor:pointer;
+}
+
+/* ===== MOBILE SIDEBAR ===== */
+@media(max-width:768px){
+
+  .topbar{
+    display:flex;
+  }
+
+  .container{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    position:fixed;
+    top:0;
+    left:-260px;
+    height:100%;
+    z-index:1000;
+    transition:.3s;
+  }
+
+  .sidebar.active{
+    left:0;
+  }
+
+  .content{
+    padding:16px;
+  }
+}
+
+.btn-back{
+  display:inline-block;
+  margin-bottom:14px;
+  padding:8px 14px;
+  background:#e3f2fd;
+  color:#0d47a1;
+  text-decoration:none;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:500;
+  transition:.2s;
+}
+
+.btn-back:hover{
+  background:#1565c0;
+  color:#fff;
+}
+
+/* ===== ADMIN TABLE (GLOBAL) ===== */
+.table-admin{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  min-width:800px;
+  background:#fff;
+}
+
+.table-admin thead th{
+  background:linear-gradient(180deg,#e3f2fd,#bbdefb);
+  color:#0d47a1;
+  font-size:14px;
+  font-weight:600;
+  padding:12px;
+  text-align:left;
+  border-bottom:2px solid #90caf9;
+}
+
+.table-admin tbody td{
+  padding:12px;
+  font-size:14px;
+  border-bottom:1px solid #eee;
+  vertical-align:middle;
+}
+
+.table-admin tbody tr:nth-child(even){
+  background:#fafafa;
+}
+
+.table-admin tbody tr:hover{
+  background:#f1f7ff;
+}
+
+.table-admin .empty{
+  text-align:center;
+  padding:20px;
+  color:#777;
+  font-style:italic;
+}
+
+/* ===== STATUS BADGE ===== */
+.status{
+  font-weight:600;
+  text-align:center;
+  border-radius:6px;
+  padding:6px 10px;
+  display:inline-block;
+  min-width:90px;
+}
+
+.status.hadir{
+  background:#e8f5e9;
+  color:#2e7d32;
+}
+
+.status.izin{
+  background:#fff8e1;
+  color:#f9a825;
+}
+
+.status.alpha{
+  background:#ffebee;
+  color:#c62828;
+}
+
+.btn-primary{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 20px;
+  background:#1565c0;
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+  transition:.2s;
+}
+
+.btn-primary:hover{
+  background:#0d47a1;
+}
